@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Complaint — CampusCare</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+}
+.complaint-card {
+    width: 100%;
+    max-width: 520px;
+    background: var(--surface);
+    border-radius: var(--radius-xl);
+    padding: 44px 40px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    animation: slideUp .4s ease;
+}
+.complaint-card h2 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+.complaint-card .subtitle {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 32px;
+}
+</style>
+</head>
+<body>
+<div class="complaint-card">
+    <h2>Submit a Complaint</h2>
+    <p class="subtitle">Fill in the details below. We'll respond as soon as possible.</p>
+
+    <form action="complaint.php" method="POST" id="complaintForm">
+        <div class="form-group">
+            <label>Your Full Name</label>
+            <input type="text" name="student_name" placeholder="e.g. Priya Sharma" required>
+        </div>
+        <div class="form-group">
+            <label>Department</label>
+            <input type="text" name="department" placeholder="e.g. Computer Science" required>
+        </div>
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+            <label>Complaint Title</label>
+            <input type="text" name="title" placeholder="Brief title of your complaint" required>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="description" placeholder="Describe your complaint in detail…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn">Submit Complaint</button>
+    </form>
+
+    <div class="auth-links" style="margin-top:20px;">
+        <a href="my_complaints.php">← Back to My Complaints</a>
+    </div>
+</div>
+<script>
+document.getElementById('complaintForm').addEventListener('submit', function() {
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+});
+</script>
+</body>
+</html>
