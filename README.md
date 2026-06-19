@@ -1,4 +1,4 @@
-# CampusCare 🎓
+# EduResolve 🎓
 ### Smart Campus Issue Resolution Portal
 
 A web-based complaint management system where students can 
